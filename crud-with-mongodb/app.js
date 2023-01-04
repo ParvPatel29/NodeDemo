@@ -12,7 +12,7 @@ module.exports = app;
 const mongoose = require("mongoose")
 mongoose.set("strictQuery", false);
 mongoose.connect(
-     process.env.MONGODB_URI || "mongodb://localhost/CRUD",{
+     "mongodb://127.0.0.1:27017/myapp')",{
         useNewUrlParser:true,
         useUnifiedTopology:true
     },

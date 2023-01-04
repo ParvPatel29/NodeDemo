@@ -1,7 +1,7 @@
 const express = require("express");
 const {
   getAllBlogs,
-  createBlog,
+  createBlogs,
   getBlogById,
   updateBlog,
   deleteBlog,
@@ -9,7 +9,7 @@ const {
  
 const router = express.Router();
  
-router.route("/").get(getAllBlogs).post(createBlog);
+router.route("/").get(getAllBlogs).post(createBlogs);
 router.route("/:id").get(getBlogById).put(updateBlog).delete(deleteBlog);
  
 module.exports = router;
