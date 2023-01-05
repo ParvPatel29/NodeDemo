@@ -3,7 +3,8 @@ const app = express()
 const qr = require('qr-image')
 
 app.get('/qr', (req, res) => {
-  const code = qr.image('Some text', { type: 'png' })
+  const url = 'https://goo.gl/maps/3oLKzaLX74ujyvYo6'
+  const code = qr.image(url, { type: 'png' })
   res.type('png')
   code.pipe(res)
 })
