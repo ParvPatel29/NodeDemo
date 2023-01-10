@@ -1,10 +1,6 @@
-const express = require("express")
-const app = express()
-const port =3000;
+const express = require('express')
+const app =express()
 
-app.get("/",(req,res)=>{
-    res.send("Hello World!");
-});
 users=[
     {id:1,name: 'User 1'},
     {id:2,name: 'User 2'},
@@ -21,13 +17,20 @@ users=[
 ]
 app.get('/users', async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
-    const skip = (page - 1) * limit;
+    const page = parseInt(req.query.page)
+    const limit = parseInt(req.query.limit)
+    
 
-    const users = await User.find().skip(skip).limit(limit);
-    res.json(users);
+    const si=(page-1)*limit
+    const ei=page*limit
+    const userResults=users.slice(si,ei)
+    result={}
+    result.data = userResults
+    result.count = users.length
+    result.page = page
+    res.json(result);
   } catch (error) {
     res.status(500).json({ error });
   }
 });
+app.listen(3000)
