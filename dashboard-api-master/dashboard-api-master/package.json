@@ -1,0 +1,48 @@
+{
+  "name": "dashboards",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "start": "NODE_ENV=production nodemon src/index.ts",
+    "build": "npx tsc",
+    "migration:alter": "SYNC_TABLES=true SYNC_MODE=alter nodemon src/index.ts",
+    "migration:force": "SYNC_TABLES=true SYNC_MODE=force nodemon src/index.ts"
+  },
+  "dependencies": {
+    "@types/morgan": "^1.9.3",
+    "axios": "^1.2.1",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-validator": "^6.14.2",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.3.0",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "path": "^0.12.7",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.3",
+    "sequelize-auto": "^0.8.8"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.41",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.8",
+    "@types/md5": "^2.3.2",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^18.0.6",
+    "@types/pg": "^8.6.5",
+    "@types/sequelize": "^4.28.14",
+    "nodemon": "^2.0.19",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}
