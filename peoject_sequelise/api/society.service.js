@@ -44,8 +44,9 @@ module.exports={
         if(data.fname)updates.fname=data.fname
         if(data.lname)updates.lname=data.lname
         if(data.mobileno)updates.mobileno=data.mobileno
-        societies.update({fname:data.fname
-        },{where:{id:data.id}})
+        console.log(updates)
+        societies.update(updates
+        ,{where:{flatno:data.flatno}})
         .then(ans=>{
             callback(null,ans)
         })
